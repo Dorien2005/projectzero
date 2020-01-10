@@ -1,0 +1,134 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <style>
+  @media only screen and (min-width: 1px) {
+    .container{
+      display:grid;
+      grid-template-columns: 20% auto 20%;
+      align-content:start;
+      grid-gap: 15px;
+      grid-template-areas: ". titel ."
+                         ". pfp. "
+                         ". kms ."
+                         ". punten .";
+    }
+  body {
+    background-color:#C2BBF0;
+
+  }
+  #titel{
+    display: flex;
+    justify-content: center;
+    font-size :100%;
+    text-align: center;
+    grid-area:titel;
+    }
+  #pfp{
+    display: flex;
+    justify-content: center;
+    font-size :100%;
+    text-align: center;
+    grid-area:pfp;
+  }
+  #kms{
+    display: flex;
+    justify-content: center;
+    font-size :100%;
+    text-align: center;
+    grid-area:kms;
+  }
+  #punten{
+    display: flex;
+    justify-content: center;
+    font-size :100%;
+    text-align: center;
+    grid-area:punten;
+  }
+  .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
+}
+@media only screen and (min-width: 720px){
+  body{
+    background-color:#C2BBF0;
+  }
+}
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waar Sta ik?</title>
+</head>
+
+<body>
+  <script src="js/scripts.js"></script>
+  <div id="mySidenav" class="sidenav">
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+       <a href="#">Home</a>
+       <a href="#">Waar sta ik?</a>
+       <a href="#">Over ons</a>
+       <a href="#">Contact</a>
+     </div>
+     <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;Standaard Gans</span>
+  <section class="container">
+    <div id="titel">
+      <h1>Waar sta ik?</h1>
+    </div>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+    <div id="pfp">
+      <img src="https://www.justpark.com/media/img/misc/avatar-st.png" class="photo">
+  </div>
+    <div id="kms">
+      <h2> 69km </h2>
+    </div>
+    <div id="punten">
+      <h2>420 pt.</h2>
+    </div>
+</section>
+</body>
+</html>
