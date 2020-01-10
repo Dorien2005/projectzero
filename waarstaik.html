@@ -8,9 +8,10 @@
       display:grid;
       grid-template-columns: 20% auto 20%;
       align-content:start;
-      grid-gap: 15px;
+      grid-gap: 5px;
       grid-template-areas: ". titel ."
                          ". pfp. "
+                         ". username . "
                          ". kms ."
                          ". punten .";
     }
@@ -23,7 +24,10 @@
     justify-content: center;
     font-size :100%;
     text-align: center;
+    padding: 2%;
+    background-color: #8FB8ED;
     grid-area:titel;
+
     }
   #pfp{
     display: flex;
@@ -32,11 +36,20 @@
     text-align: center;
     grid-area:pfp;
   }
+  #username{
+    display: flex;
+    justify-content: center;
+    font-size :80%;
+    text-align: center;
+    grid-area:username;
+  }
   #kms{
     display: flex;
     justify-content: center;
     font-size :100%;
     text-align: center;
+    padding: 2%;
+    background-color: #8FB8ED;
     grid-area:kms;
   }
   #punten{
@@ -44,6 +57,8 @@
     justify-content: center;
     font-size :100%;
     text-align: center;
+    padding: 2%;
+    background-color: #8FB8ED;
     grid-area:punten;
   }
   .sidenav {
@@ -106,7 +121,7 @@
        <a href="#">Over ons</a>
        <a href="#">Contact</a>
      </div>
-     <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;Standaard Gans</span>
+     <span style="font-size:25px;text-align:center;cursor:pointer" onclick="openNav()">&#9776;Standaard Gans</span>
   <section class="container">
     <div id="titel">
       <h1>Waar sta ik?</h1>
@@ -122,6 +137,9 @@
     </script>
     <div id="pfp">
       <img src="https://www.justpark.com/media/img/misc/avatar-st.png" class="photo">
+  </div>
+  <div id="username">
+    <h3>RunningGoose420</h3>
   </div>
     <div id="kms">
       <h2> 69km </h2>
