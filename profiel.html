@@ -8,11 +8,13 @@
       display:grid;
       grid-template-columns: 20% auto 20%;
       align-content:start;
-      grid-gap: 15px;
+      grid-gap: 5px;
       grid-template-areas: ". titel ."
                          ". pfp. "
+                         ". username . "
                          ". kms ."
-                         ". punten .";
+                         ". punten ."
+                         ". footer .";
     }
   body {
     background-color:#C2BBF0;
@@ -23,7 +25,10 @@
     justify-content: center;
     font-size :100%;
     text-align: center;
+    padding: 2%;
+    background-color: #8FB8ED;
     grid-area:titel;
+
     }
   #pfp{
     display: flex;
@@ -32,11 +37,20 @@
     text-align: center;
     grid-area:pfp;
   }
+  #username{
+    display: flex;
+    justify-content: center;
+    font-size :80%;
+    text-align: center;
+    grid-area:username;
+  }
   #kms{
     display: flex;
     justify-content: center;
     font-size :100%;
     text-align: center;
+    padding: 2%;
+    background-color: #8FB8ED;
     grid-area:kms;
   }
   #punten{
@@ -44,6 +58,8 @@
     justify-content: center;
     font-size :100%;
     text-align: center;
+    padding: 2%;
+    background-color: #8FB8ED;
     grid-area:punten;
   }
   .sidenav {
@@ -79,7 +95,16 @@
         font-size: 36px;
         margin-left: 50px;
       }
+      #footer{
+        display: sticky;
+        justify-content: center;
+        font-size :100%;
+        text-align: center;
+        padding: 1px;
+        background-color: #8FB8ED;
+        grid-area:footer;
 
+        }
       @media screen and (max-height: 450px) {
         .sidenav {padding-top: 15px;}
         .sidenav a {font-size: 18px;}
@@ -94,7 +119,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waar Sta ik?</title>
+  <title>Profiel</title>
 </head>
 
 <body>
@@ -102,14 +127,14 @@
   <div id="mySidenav" class="sidenav">
        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
        <a href="#">Home</a>
-       <a href="#">Waar sta ik?</a>
+       <a href="#">Profiel</a>
        <a href="#">Over ons</a>
        <a href="#">Contact</a>
      </div>
-     <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;Standaard Gans</span>
+     <span style="font-size:25px;text-align:center;cursor:pointer" onclick="openNav()">&#9776;   StandaardGans</span>
   <section class="container">
     <div id="titel">
-      <h1>Waar sta ik?</h1>
+      <h1>Profiel</h1>
     </div>
     <script>
       function openNav() {
@@ -123,12 +148,20 @@
     <div id="pfp">
       <img src="https://www.justpark.com/media/img/misc/avatar-st.png" class="photo">
   </div>
+  <div id="username">
+    <h3>RunningGoose420</h3>
+  </div>
     <div id="kms">
-      <h2> 69km </h2>
+      <h2>Distance ran: 69km </h2>
     </div>
     <div id="punten">
-      <h2>420 pt.</h2>
+      <h2>Points earned: 420 pt.</h2>
     </div>
 </section>
+<div id="footer">
+  <footer>
+  <p>Gemaakt door: David,Leo,Leah en Dorien</p>
+</footer>
+</div>
 </body>
 </html>
