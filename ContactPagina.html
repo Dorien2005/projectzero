@@ -3,24 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>poopie :)</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins|Pacifico|Roboto&display=swap" rel="stylesheet">
+    <title>Contact Pagina</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <style>
 body {
   margin: 0;
-  font-family: "Poppins";
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 header {
-  font-family: Roboto;
   background: linear-gradient(to right, #8FB8ED, #F5DC5F);
-  padding: 7%;
   color: #DDFFF7;
+}
+
+h1{
+  padding: 7%;
+  padding-bottom: 11%;
   font-size: 40px;
   text-align: center;
 }
-
-
 
 #container2 {
   display: grid;
@@ -29,8 +30,8 @@ header {
   grid-template-areas: "badge1 badge1 badge1 badge1"
                        "badge2 badge3 badge4 badge5"
                        "badge2 badge3 badge4 badge5";
-                       
-                       
+
+
   grid-gap: 0px;
   background-color: #BCF9C9;
 }
@@ -49,7 +50,7 @@ header {
   background-color: #da6f6f;
   height: 200px;
   padding: 10px;
-  
+  border: solid black;
 }
 
 #badge3 {
@@ -83,7 +84,7 @@ header {
 
 #kopje1 {
   font-family: Roboto;
-  
+
   font-size: 40px;
 }
 
@@ -132,10 +133,56 @@ header {
 	//grid-gap: 0px;
 }
 }
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
     </style>
   </head>
   <body>
     <header>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="profiel.html">Profile</a>
+      <a href="#">Over ons</a>
+      <a href="ContactPagina.html">Contact</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
       <h1>
         Standaard
         gans
@@ -148,8 +195,8 @@ header {
           <p>
             ONS TEAM
           </p>
-        </div> 
-        
+        </div>
+
         <div id="badge2">
           <p>
             Bladiebladieblorb
@@ -157,9 +204,9 @@ header {
         </div>
         <div id="badge3">
           <p>
-            Sport veel, anders komen we je halen 
+            Sport veel, anders komen we je halen
           </p>
-        </div> 
+        </div>
         <div id="badge4">
           <p>
             Deze website is erg mooi
@@ -184,5 +231,14 @@ header {
         </ul>
       </div>
     </article>
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
   </body>
 </html>
