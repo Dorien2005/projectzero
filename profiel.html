@@ -14,14 +14,13 @@
                          ". username . "
                          ". kms ."
                          ". punten ."
-                        /* ". footer ."*/;
+                         ". footer .";
     }
   body {
     background-color:#C2BBF0;
     font-family: 'Source Sans Pro', sans-serif;
 
   }
-}
   #titel{
     display: flex;
     justify-content: center;
@@ -102,8 +101,8 @@
         font-size: 36px;
         margin-left: 50px;
       }
-      /*footer{
-        position: sticky;
+      #footer{
+        display: sticky;
         justify-content: center;
         font-size :100%;
         text-align: center;
@@ -111,21 +110,12 @@
         background-color: #8FB8ED;
         grid-area:footer;
 
-        }*/
-        footer {
-          position: fixed;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          background-color: #8FB8ED;
-          color: black;
-          text-align: center;
         }
       @media screen and (max-height: 450px) {
         .sidenav {padding-top: 15px;}
         .sidenav a {font-size: 18px;}
       }
-
+}
 @media only screen and (min-width: 720px){
   body{
     background-color:#C2BBF0;
@@ -176,9 +166,6 @@
       <h2>Punten: 420 pt.</h2>
     </div>
 </section>
-<br>
-<br>
-<br>
 <div id="footer">
   <footer>
   <p>Gemaakt door: David,Leo,Leah en Dorien</p>
