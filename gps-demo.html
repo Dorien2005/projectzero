@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button onclick="getLocation(0)">
+      Set location A
+    </button>
+    <button onclick="getLocation(1)">
+      Set location B
+    </button>
+    <button onclick="getDistance(cached_coords[0], cached_coords[1][0], cached_coords[0][1], cached_coords[1][1])">
+      Calculate distance
+    </button>
+
+    <p id="location_A">
+    </p>
+    <p id="location_B">
+    </p>
+    <p id="distance">
+    </p>
+
+    <script src="javascript.js" charset="utf-8"></script>
+  </body>
+</html>
