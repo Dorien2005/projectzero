@@ -5,13 +5,13 @@
     <title></title>
   </head>
   <body>
-    <button onclick="getLocation(0)">
+    <button onclick="getLocation(display_A)">
       Set location A
     </button>
-    <button onclick="getLocation(1)">
+    <button onclick="getLocation(display_B)">
       Set location B
     </button>
-    <button onclick="getDistance(cached_coords[0], cached_coords[1][0], cached_coords[0][1], cached_coords[1][1])">
+    <button onclick="getDistance(cached_coords[0].coords.latitude, cached_coords[0].coords.longitude, cached_coords[1].coords.latitude, cached_coords[1].coords.longitude)">
       Calculate distance
     </button>
 
