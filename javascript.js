@@ -46,7 +46,11 @@ function getDistance(lat1, lon1, lat2, lon2) {
   let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
   let d = R * c; // Distance in km
 
-  display_distance.innerHTML = d + "KM";
+  if (d < 1) {
+    display_distance.innerHTML = d*1000 + "m";
+  } else {
+    display_distance.innerHTML = d + "Km";
+  }
 }
 
 function deg2rad(deg) {
