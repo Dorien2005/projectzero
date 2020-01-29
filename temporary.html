@@ -4,24 +4,33 @@
     <meta charset="utf-8">
     <title>temporary</title>
     <style>
-      #interface_container  {
-        width: 100%;
+      body  {
+        padding: 0;
+        margin: 0;
+      }
 
-        visibility: none;
+      #interface  {
+        width: 100%;
+        height: 0;
+
+        overflow-y: hidden;
+        background: #EEEEEE;
+        transition: 0.2s;
       }
 
     </style>
   </head>
   <body>
-    <button id="start-button">
+    <button id="start">
       Start running!
     </button>
-    <div id="interface-container">
+    <div id="interface">
       <label for="time">Tijd:</label>
-      <p id="time"></p>
+      <p id="time">00:00:00</p>
 
       <label for="distance">Afstand:</label>
       <p id="distance"></p>
     </div>
+    <script src="gps-tracking.js" charset="utf-8"></script>
   </body>
 </html>
