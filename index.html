@@ -84,6 +84,16 @@
         color: black;
         text-align: center;
       }
+
+      #demapp{
+        padding-top: 10%;
+        padding-left: 32%;
+      }
+
+      #ddemap{
+        padding-bottom: 3%;
+        padding-left: 23%;
+      }
     </style>
   </head>
   <body>
@@ -91,12 +101,16 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="index.html">Home</a>
         <a href="profiel.html">Profile</a>
-        <a href="#">Over ons</a>
+        <a href="">Over ons</a>
         <a href="ContactPagina.html">Contact</a>
       </div>
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 
       <h1> Standaard Gans</h1>
+
+      <br>
+      <br>
+
 
       <footer>
         <p>gemaakt door: David, Leo, Leah en Dorien</p>
@@ -110,5 +124,7 @@
         document.getElementById("mySidenav").style.width = "0";
       }
     </script>
+    <h2 id="demapp" class="demap">Hier kunt u een kaart met alle beacons zien<h2>
+    <iframe id="ddemap" class="demap"src="https://www.google.com/maps/d/embed?mid=1FwYlEL45i6PcL6w0Dn_7TG3u12N6Yd8o" width="640" height="480"></iframe>
   </body>
 </html>
