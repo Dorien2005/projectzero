@@ -22,8 +22,8 @@ function  start() {
   const startTracking = navigator.geolocation.watchPosition(function(position)  {
     positions.push(position);
 
-    let position1 = positions[0];
-    let position2 = positions[1];
+    let position1 = positions[positions.length - 2];
+    let position2 = positions[positions.length - 1];
     console.log(positions, position1, position2);
     distance += getDistance(position1.coords.latitude, position2.coords.latitude, position1.coords.longitude, position2.coords.longitude);
 
