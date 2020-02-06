@@ -13,17 +13,27 @@
       }
 
       header {
-        text-align: center;
         background-color:#BCF9C9;
       }
 
+      #logo {
+        height: 80px;
+        display: float;
+        float: right;
+        margin: 20px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+      }
+
       #headerTitle {
+        text-align: center;
         font-size: 80px;
-        padding-top: 50px;
+        padding-top: 0px;
       }
 
       #headerTekst {
-        padding: 50px;
+        text-align: center;
+        padding: 40px;
       }
 
       #doelList {
@@ -86,16 +96,21 @@
     </style>
   </head>
   <body>
-    <div id="mySidenav" class="sidenav">
+
+    <header>
+      <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="index.html">Home</a>
       <a href="profiel.html">Profile</a>
       <a href="OverOns.html">Over ons</a>
       <a href="ContactPagina.html">Contact</a>
-    </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+      </div>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 
-    <header>
+      <img id="logo" src="https://raw.githubusercontent.com/Dorien2005/projectzero/master/logo%20StandaardGans%20transparent.png">
+      <br>
+      <br>
+      <br>
       <h1 id="headerTitle">
         Over Ons
       </h1>
