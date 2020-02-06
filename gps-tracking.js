@@ -2,7 +2,7 @@ const start_button = document.getElementById("start");
 const interface_container = document.getElementById("interface");
 const time_text = document.getElementById("time");
 const distance_text = document.getElementById("distance");
-
+const button_container = document.getElementById("button-container");
 //array of saved positions
 const positions = [];
 
@@ -15,7 +15,7 @@ function  start() {
     positions.push(position);
   });
 
-  interface_container.style.height = "200px";
+  setupInterface();
 
   //start tracking location
   let distance = 0;
@@ -30,34 +30,6 @@ function  start() {
     updateDistance(distance);
   });
 
-  function getDistance(lat1, lat2, lon1, lon2) {
-    const R = 6371; // Radius of the earth in km
-    let dLat = deg2rad(lat2-lat1);  // deg2rad below
-    let dLon = deg2rad(lon2-lon1);
-    let a =
-      Math.sin(dLat/2) * Math.sin(dLat/2) +
-      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-      Math.sin(dLon/2) * Math.sin(dLon/2);
-
-    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    let d = R * c; // Distance in km
-
-    return d;
-  }
-
-  function deg2rad(deg) {
-    return deg * (Math.PI/180)
-  }
-
-  function updateDistance(distance) {
-    if (distance < 1) {
-      distance_text.innerHTML = Math.round(distance * 1000) + "m travelled";
-    }
-    else {
-      distance_text.innerHTML = Math.round(distance) + "km travelled";
-    }
-  }
-
   //start timer
   let time = 0;
   const startTimer = setInterval(function() {
@@ -66,13 +38,41 @@ function  start() {
 
     updateTimer(time);
   }, 1000);
-
 }
 
-function updateDistance(position) {
+function setupInterface() {
+  interface_container.style.height = "200px";
+  button_container.style.bottom = "200px";
+}
 
 
+function getDistance(lat1, lat2, lon1, lon2) {
+  const R = 6371; // Radius of the earth in km
+  let dLat = deg2rad(lat2-lat1);  // deg2rad below
+  let dLon = deg2rad(lon2-lon1);
+  let a =
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+    Math.sin(dLon/2) * Math.sin(dLon/2);
 
+  let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  let d = R * c; // Distance in km
+
+  return d;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI/180)
+}
+
+
+function updateDistance(distance) {
+  if (distance < 1) {
+    distance_text.innerHTML = Math.round(distance * 1000) + " m afgelegd";
+  }
+  else {
+    distance_text.innerHTML = Math.round(distance) + " km afgelegd";
+  }
 }
 
 function updateTimer(time) {
