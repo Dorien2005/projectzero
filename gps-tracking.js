@@ -40,6 +40,12 @@ function  start() {
   }, 1000);
 }
 
+function setupInterface() {
+  interface_container.style.height = "200px";
+  button_container.style.bottom = "200px";
+}
+
+
 function getDistance(lat1, lat2, lon1, lon2) {
   const R = 6371; // Radius of the earth in km
   let dLat = deg2rad(lat2-lat1);  // deg2rad below
