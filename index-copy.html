@@ -103,28 +103,28 @@
       }
 
       #button-container button  {
-        display: inline-block;
+        position: relative;
+        left: 0;
 
         height: 60px;
-        padding-left: 50px;
-        padding-right: 50px;
+        width: 200px;
 
         font-size: 25px;
+        align-content: center;
 
         border: none;
         background: #9FC8FD;
 
         transition: 0.1s;
+
+        margin-left: 20px;
       }
 
       #button-container button:hover  {
         background: #accffc;
       }
 
-      #start {
-        position: relative;
-        left: 20px;
-      }
+
 
 
       #interface  {
@@ -166,15 +166,25 @@
       <button id="start">
         Start running!
       </button>
+
+      <span id="open-close">
+        &#x25BC;
+      </span>
     </div>
     <div id="interface">
-      <p id="time">
-        00:00:00
-      </p>
-
-      <p id="distance">
-        0 m afgelegd
-      </p>
+      <div id="timer-container">
+        <p id="timer">
+          00:00:00
+        </p>
+      </div>
+      <div id="performance-container">
+        <p id="distance">
+          0 m afgelegd
+        </p>
+        <p id="points">
+          0 punten verdiend
+        </p>
+      </div>
     </div>
 
 

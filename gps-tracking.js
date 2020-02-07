@@ -1,13 +1,20 @@
 const start_button = document.getElementById("start");
 const interface_container = document.getElementById("interface");
-const time_text = document.getElementById("time");
+const time_text = document.getElementById("timer");
 const distance_text = document.getElementById("distance");
 const button_container = document.getElementById("button-container");
 //array of saved positions
 const positions = [];
 
+let startTimer;
+let startTracking;
+
 
 start_button.addEventListener("click", start);
+
+
+
+
 
 function  start() {
   //save starting position
@@ -19,7 +26,7 @@ function  start() {
 
   //start tracking location
   let distance = 0;
-  const startTracking = navigator.geolocation.watchPosition(function(position)  {
+  startTracking = navigator.geolocation.watchPosition(function(position)  {
     positions.push(position);
 
     let position1 = positions[positions.length - 2];
@@ -32,7 +39,7 @@ function  start() {
 
   //start timer
   let time = 0;
-  const startTimer = setInterval(function() {
+  startTimer = setInterval(function() {
     //update time by 1 each second
     time += 1;
 
@@ -40,10 +47,59 @@ function  start() {
   }, 1000);
 }
 
+function stop() {
+  clearInterval(startTimer);
+  navigator.geolocation.clearWatch(startTracking);
+
+  pause_button.style.left = "9999px";
+  stop_button.style.left = "9999px";
+
+  interface_container.style.height = "0px";
+
+}
+
+
 function setupInterface() {
   interface_container.style.height = "200px";
   button_container.style.bottom = "200px";
+
+
+  //create pause button
+  const pause_button = document.createElement("button");
+  pause_button.innerHTML = "pauzeer";
+  pause_button.style.transition = "2s";
+  pause_button.style.left = "0px";
+  pause_button.style.display = "none";
+
+  button_container.appendChild(pause_button);
+
+
+  //create stop button
+  const stop_button = document.createElement("button");
+  stop_button.innerHTML = "stop";
+  pause_button.style.transition = "2s";
+  pause_button.style.left = "0px";
+  pause_button.style.display = "none";
+
+  button_container.appendChild(stop_button);
+
+  stop_button.addEventListener("click", stop);
+
+  //remove start button
+  start_button.style.transition = "3s"
+  start_button.style.left = "9999px";
+  setTimeout(function()  {
+      start_button.style.display = "none";
+
+      pause_button.style.display = "inline_block";
+      pause_button.style.left = "200px";
+
+      //button_container.appendChild(stop_button);
+      //stop_button.style.left = "0px";
+  }, 400);
 }
+
+function resetInterface() {}
 
 
 function getDistance(lat1, lat2, lon1, lon2) {
