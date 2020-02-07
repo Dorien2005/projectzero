@@ -20,19 +20,23 @@
           padding-bottom: 15%;
         }
         #wnrdicht{
-          font-size:30px;
+          font-size:50px;
           cursor:pointer;
         }
+
+        h2{
+          font-size: 30px;
+        }
+
         #ddemap{
           padding-bottom: 3%;
-          padding-left: 23%;
-          width: 640px;
-          height: 480px;
+          width: 980px;
+          height: 580px;
         }
 
         #demapp{
           padding-top: 10%;
-          padding-left: 32%;
+          padding-left: 15%;
         }
 
       }
@@ -52,23 +56,19 @@
           font-size: 60px;
         }
         #wnrdicht{
-          font-size:50px;
+          font-size:30px;
           cursor:pointer;
         }
-
-        h2{
-          font-size: 30px;
-        }
-
         #ddemap{
           padding-bottom: 3%;
-          width: 980px;
-          height: 580px;
+          padding-left: 23%;
+          width: 640px;
+          height: 480px;
         }
 
         #demapp{
           padding-top: 10%;
-          padding-left: 15%;
+          padding-left: 32%;
         }
 
       }
@@ -122,6 +122,60 @@
         text-align: center;
       }
 
+      /*buttons stying*/
+      #button-container {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        background-color: #8FB8ED;
+
+        transition: 0.4s;
+      }
+
+      #button-container button  {
+        display: inline-block;
+
+        height: 60px;
+        padding-left: 50px;
+        padding-right: 50px;
+
+        font-size: 25px;
+
+        border: none;
+        background: #9FC8FD;
+
+        transition: 0.1s;
+      }
+
+      #button-container button:hover  {
+        background: #accffc;
+      }
+
+      #start {
+        position: relative;
+        left: 20px;
+      }
+
+
+      #interface  {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 0;
+
+        overflow-y: hidden;
+        background: #9FC8FD;
+
+        transition: 0.4s;
+      }
+
   </style>
   </head>
   <body>
@@ -139,6 +193,20 @@
       <br>
       <br>
 
+      <div id="button-container">
+        <button id="start">
+          Start running!
+        </button>
+      </div>
+      <div id="interface">
+        <p id="time">
+          00:00:00
+        </p>
+
+        <p id="distance">
+          0 m afgelegd
+        </p>
+      </div>
 
       <footer>
         <p>gemaakt door: David, Leo, Leah en Dorien</p>
