@@ -1,8 +1,16 @@
 const start_button = document.getElementById("start");
+const pause_button = document.getElementById("pause");
+const stop_button = document.getElementById("stop");
+
+const open_close = document.getElementById("open-close");
+
 const interface_container = document.getElementById("interface");
+const button_container = document.getElementById("button-container");
+
 const time_text = document.getElementById("timer");
 const distance_text = document.getElementById("distance");
-const button_container = document.getElementById("button-container");
+
+
 //array of saved positions
 const positions = [];
 
@@ -47,15 +55,27 @@ function  start() {
   }, 1000);
 }
 
-function stop() {
+function  stop() {
   clearInterval(startTimer);
   navigator.geolocation.clearWatch(startTracking);
 
-  pause_button.style.left = "9999px";
-  stop_button.style.left = "9999px";
+  start_button.style.display = "block";
 
-  interface_container.style.height = "0px";
+  pause_button.style.transition = ".4s";
+  pause_button.style.left = "-650px";
 
+  stop_button.style.transition = ".4s";
+  stop_button.style.left = "-400px";
+
+  open_close.style.transition = ".4s";
+  open_close.style.right = "-50px";
+
+  interface_container.style.height = "0";
+  button_container.style.bottom = "0";
+
+
+  time_text.innerHTML = "00:00:00";
+  distance_text.innerHTML = "0m afgelegd"
 }
 
 
@@ -63,44 +83,49 @@ function setupInterface() {
   interface_container.style.height = "200px";
   button_container.style.bottom = "200px";
 
-
-  //create pause button
-  const pause_button = document.createElement("button");
-  pause_button.innerHTML = "pauzeer";
-  pause_button.style.transition = "2s";
-  pause_button.style.left = "0px";
-  pause_button.style.display = "none";
-
-  button_container.appendChild(pause_button);
-
-
-  //create stop button
-  const stop_button = document.createElement("button");
-  stop_button.innerHTML = "stop";
-  pause_button.style.transition = "2s";
-  pause_button.style.left = "0px";
-  pause_button.style.display = "none";
-
-  button_container.appendChild(stop_button);
-
   stop_button.addEventListener("click", stop);
+  open_close.addEventListener("click", closeInterface);
 
   //remove start button
-  start_button.style.transition = "3s"
-  start_button.style.left = "9999px";
-  setTimeout(function()  {
-      start_button.style.display = "none";
 
-      pause_button.style.display = "inline_block";
-      pause_button.style.left = "200px";
+  pause_button.style.display = "block";
+  pause_button.style.left = "0px";
 
-      //button_container.appendChild(stop_button);
-      //stop_button.style.left = "0px";
-  }, 400);
+  stop_button.style.display = "block";
+  stop_button.style.left = "250px";
+
+  open_close.style.right = "50px";
+
+
+  setTimeout(function() {
+    pause_button.style.transition = "0s";
+    stop_button.style.transition = "0s";
+    open_close.style.transition = "0s";
+
+    start_button.style.display = "none";
+  }, 700)
+
+
+
 }
 
-function resetInterface() {}
+function closeInterface() {
+  interface_container.style.height = "0";
+  button_container.style.bottom = "0";
 
+  open_close.removeEventListener("click", closeInterface);
+  open_close.addEventListener("click", openInterface);
+  open_close.innerHTML = "&#x25B2;";
+}
+
+function openInterface() {
+  interface_container.style.height = "200px";
+  button_container.style.bottom = "200px";
+
+  open_close.removeEventListener("click", openInterface);
+  open_close.addEventListener("click", closeInterface);
+  open_close.innerHTML = "&#x25BC;";
+}
 
 function getDistance(lat1, lat2, lon1, lon2) {
   const R = 6371; // Radius of the earth in km
