@@ -140,10 +140,7 @@ function setupInterface() {
     open_close.style.transition = "0s";
 
     start_button.style.display = "none";
-  }, 700)
-
-
-
+  }, 700);
 }
 
 function closeInterface() {
