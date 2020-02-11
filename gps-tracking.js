@@ -21,9 +21,6 @@ let startTracking;
 start_button.addEventListener("click", start);
 
 
-
-
-
 function  start() {
   //save starting position
   navigator.geolocation.getCurrentPosition(function(position) {
@@ -55,6 +52,16 @@ function  start() {
   }, 1000);
 }
 
+function  pause() {
+  clearInterval(startTimer);
+  navigator.geolocation.clearWatch(startTracking);
+
+  pause_button.removeEventListener("click", pause);
+
+  pause_button.innerHTML = "Ga door";
+}
+
+
 function  stop() {
   clearInterval(startTimer);
   navigator.geolocation.clearWatch(startTracking);
@@ -83,6 +90,7 @@ function setupInterface() {
   interface_container.style.height = "200px";
   button_container.style.bottom = "200px";
 
+  pause_button.addEventListener("click", pause);
   stop_button.addEventListener("click", stop);
   open_close.addEventListener("click", closeInterface);
 
