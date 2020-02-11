@@ -129,7 +129,7 @@ function setupInterface() {
   pause_button.style.left = "0px";
 
   stop_button.style.display = "block";
-  stop_button.style.left = "400px";
+  stop_button.style.left = "320px";
 
   open_close.style.right = "50px";
 
