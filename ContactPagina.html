@@ -12,16 +12,55 @@ body {
 }
 
 header {
-  background: linear-gradient(to right, #8FB8ED, #F5DC5F);
+  background-color: #ACE9B9;
   color: #DDFFF7;
+}
+
+#logo {
+  height: 80px;
+  display: float;
+  float: right;
+  margin: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 h1{
   padding: 7%;
   padding-bottom: 11%;
   font-size: 40px;
+  margin: 0px;
   text-align: center;
 }
+
+#container1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+	grid-template-areas: "div1 div1 div1 div2 div2"
+                       "div1 div1 div1 div3 div3";
+	grid-gap: 0px;
+}
+
+#div1 {
+  grid-area: div1;
+  background-color: #9292926b;
+  padding: 10px;
+  height: 300px;
+}
+
+#div2 {
+  grid-area: div2;
+  background-color: #dbdbdb;
+  padding: 10px;
+}
+
+#div3 {
+  grid-area: div3;
+  background-color: #cccccc;
+  padding: 10px;
+}
+
 
 #container2 {
   display: grid;
@@ -36,11 +75,15 @@ h1{
   background-color: #BCF9C9;
 }
 
+#teamTitel {
+  margin: 20px;
+}
+
 #badge1 {
   grid-area: badge1;
   background-color: #8FB8ED;
-  height: 100px;
   padding: 10px;
+  margin-top: 0px;
   font-size: 40px;
   text-align: center;
 }
@@ -48,61 +91,56 @@ h1{
 #badge2 {
   grid-area: badge2;
   background-color: #da6f6f;
-  height: 200px;
   padding: 10px;
-  border: solid black;
 }
 
 #badge3 {
   grid-area: badge3;
   background-color: #F5DC5F;
-  height: 200px;
   padding: 10px;
 }
 
 #badge4 {
   grid-area: badge4;
   background-color: #BCF9C9;
-  height: 200px;
   padding: 10px;
 }
 
 #badge5 {
   grid-area: badge5;
   background-color: #DDFFF7;
-  height: 200px;
   padding: 10px;
 }
 
-#container3 {
-  background-color: #8FB8ED;
-  height: 200px;
-  padding: 10px;
-  font-size: 60px;
-  text-align: center;
+#mailbutton {
+  font: 18px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #kopje1 {
-  font-family: Roboto;
-
   font-size: 40px;
 }
 
-#doelList {
-  padding: 20px;
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #8FB8ED;
+  color: black;
+  text-align: center;
 }
-
-.doelItem {
-  background: #8FB8ED;
-  padding: 10px;
-  margin: 50px;
-}
-
 @media only screen and (max-width: 600px) {
   #container2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: "badge1 badge1"
                        "badge2 badge3"
                        "badge2 badge3"
@@ -113,26 +151,12 @@ h1{
   background-color: #fbeaeba9;
   }
 
-  #badge1 {
-  height: 200px;
+  #badge1, #kopje1 {
   font-size: 60px;
 
+  }
 }
 
-  //#container1 {
-  //display: grid;
-  //grid-template-columns: 1fr;
-  //grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	//grid-template-areas: "div1"
-  //                     "div1"
-  //                     "div1"
-  //                     "div1"
-  //                     "div2"
-  //                     "div3"
-  //                     "div4";
-	//grid-gap: 0px;
-}
-}
 .sidenav {
   height: 100%;
   width: 0;
@@ -170,6 +194,9 @@ h1{
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+
+
+  }
 }
     </style>
   </head>
@@ -179,20 +206,22 @@ h1{
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="index.html">Home</a>
       <a href="profiel.html">Profile</a>
-      <a href="#">Over ons</a>
+      <a href="OverOns.html">Over ons</a>
       <a href="ContactPagina.html">Contact</a>
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-      <h1>
-        Standaard
-        gans
-      </h1>
+    <img id="logo" src="https://raw.githubusercontent.com/Dorien2005/projectzero/master/logo%20StandaardGans%20transparent.png">
+    <br>
+    <br>
+    <h1>
+      Standaard
+      gans
+    </h1>
     </header>
     <article>
-
       <div id="container2">
         <div id="badge1">
-          <p>
+          <p id="teamTitel">
             ONS TEAM
           </p>
         </div>
@@ -218,19 +247,29 @@ h1{
           </p>
         </div>
       </div>
-      <div id="container3">
-        <p id="kopje1">
-          ONZE DOELEN
-        </p>
-      </div>
       <div id="container1">
-        <ul id="doelList">
-          <li class="doelItem">HaLlo</li>
-          <li class="doelItem">sPorT?</li>
-          <li class="doelItem">spORt.</li>
-        </ul>
+        <div id="div1">
+          <p>
+            Heeft u nog meer vragen over wat wij doen hier bij standaardgans? Of heeft u een andere vraag? Hiernaast kan u alle informatie vinden die u nodig heeft om ons te kunnen bereiken. We hopen met spoed uw vraag te kunnen beantwoorden.
+          </p>
+        </div>
+        <div id="div2">
+          <p>
+           Vragen? Stuur ons een mail!
+          </p>
+          <a id="mailbutton" href="mailto: standaardgans@yopmail.com">Stuur een mail!</a>
+        </div>
+        <div id="div3">
+          <p>
+            Problemen? Bel onze helpdesk!
+            06-6942069
+          </p>
+        </div>
       </div>
     </article>
+    <footer>
+      <p>gemaakt door: David, Leo, Leah en Dorien</p>
+    </footer>
     <script>
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";

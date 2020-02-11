@@ -10,6 +10,16 @@
           font-family: 'Source Sans Pro', sans-serif;
           background-color: #BCF9C9;
         }
+        
+        #logo {
+          height: 80px;
+          display: float;
+          float: right;
+          margin: 20px;
+          margin-bottom: 0px;
+          margin-top: 0px;
+        }
+        
         h1 {
           margin-left: 15%;
           margin-right: 15%;
@@ -19,13 +29,42 @@
           padding-top: 15%;
           padding-bottom: 15%;
         }
-      }
+        #wnrdicht{
+          font-size:50px;
+          cursor:pointer;
+        }
 
+        h2{
+          font-size: 30px;
+        }
+
+        #ddemap{
+          padding-bottom: 3%;
+          width: 980px;
+          height: 580px;
+        }
+
+        #demapp{
+          padding-top: 10%;
+          padding-left: 15%;
+        }
+
+      }
       @media only screen and (min-width: 700px){
         body {
           font-family: 'Source Sans Pro', sans-serif;
           background-color: #DDFFF7;
         }
+        
+        #logo {
+          height: 80px;
+          display: float;
+          float: right;
+          margin: 20px;
+          margin-bottom: 0px;
+          margin-top: 0px;
+        }
+        
         h1 {
           margin-left: 15%;
           margin-right: 15%;
@@ -34,8 +73,26 @@
           text-align: center;
           padding-top: 15%;
           padding-bottom: 15%;
+          font-size: 50px;
         }
+        #wnrdicht{
+          font-size:30px;
+          cursor:pointer;
+        }
+        #ddemap{
+          padding-bottom: 3%;
+          padding-left: 23%;
+          width: 640px;
+          height: 480px;
+        }
+
+        #demapp{
+          padding-top: 10%;
+          padding-left: 32%;
+        }
+
       }
+
       .sidenav {
         height: 100%;
         width: 0;
@@ -43,6 +100,7 @@
         z-index: 1;
         top: 0;
         left: 0;
+        /*asldfjkhaslj */
         background-color: #111;
         overflow-x: hidden;
         transition: 0.5s;
@@ -74,32 +132,92 @@
         .sidenav {padding-top: 15px;}
         .sidenav a {font-size: 18px;}
       }
-      footer {
+
+      /*buttons stying*/
+      #button-container {
         position: fixed;
         left: 0;
         bottom: 0;
+
         width: 100%;
+        padding: 0;
+        margin: 0;
+
         background-color: #8FB8ED;
-        color: black;
-        text-align: center;
+
+        transition: 0.4s;
       }
-    </style>
+
+      #button-container button  {
+        display: inline-block;
+
+        height: 60px;
+        padding-left: 50px;
+        padding-right: 50px;
+
+        font-size: 25px;
+
+        border: none;
+        background: #9FC8FD;
+
+        transition: 0.1s;
+      }
+
+      #button-container button:hover  {
+        background: #accffc;
+      }
+
+      #start {
+        position: relative;
+        left: 20px;
+      }
+
+
+      #interface  {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 0;
+
+        overflow-y: hidden;
+        background: #9FC8FD;
+
+        transition: 0.4s;
+      }
+  </style>
   </head>
   <body>
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="index.html">Home</a>
         <a href="profiel.html">Profile</a>
-        <a href="#">Over ons</a>
+        <a href="OverOns.html">Over ons</a>
         <a href="ContactPagina.html">Contact</a>
       </div>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-
+      <span id="wnrdicht" onclick="openNav()">&#9776; open</span>
+      <img id="logo" src="https://raw.githubusercontent.com/Dorien2005/projectzero/master/logo%20StandaardGans%20transparent.png">
       <h1> Standaard Gans</h1>
 
-      <footer>
-        <p>gemaakt door: David, Leo, Leah en Dorien</p>
-      </footer>
+      <br>
+      <br>
+
+      <div id="button-container">
+        <button id="start">
+          Start running!
+        </button>
+      </div>
+      <div id="interface">
+        <p id="time">
+          00:00:00
+        </p>
+
+        <p id="distance">
+          0 m afgelegd
+        </p>
+      </div>
+
     <script>
       function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
@@ -109,5 +227,8 @@
         document.getElementById("mySidenav").style.width = "0";
       }
     </script>
+    <script src="gps-tracking.js" charset="utf-8"></script>
+    <h2 id="demapp" class="demap">Hier kunt u een kaart met alle beacons zien<h2>
+    <iframe id="ddemap" class="demap"src="https://www.google.com/maps/d/embed?mid=1FwYlEL45i6PcL6w0Dn_7TG3u12N6Yd8o"></iframe>
   </body>
 </html>

@@ -1,1 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <style>
 
+      * {
+        margin: 0px;
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+
+      header {
+        background-color:#BCF9C9;
+      }
+
+      #logo {
+        height: 80px;
+        display: float;
+        float: right;
+        margin: 20px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+      }
+
+      #headerTitle {
+        text-align: center;
+        font-size: 80px;
+        padding-top: 0px;
+      }
+
+      #headerTekst {
+        text-align: center;
+        padding: 40px;
+      }
+
+      #doelList {
+        padding: 20px;
+        list-style: none;
+      }
+
+      .doelItem {
+        background: #C2BBF0;
+        padding: 10px;
+        margin: 50px;
+        text-align:center;
+      }
+
+      #doelTitel {
+        background-color: #8FB8ED;
+        padding-top: 30px;
+        padding-bottom: 40px;
+        font-size: 60px;
+        text-align: center;
+      }
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color:#111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="profiel.html">Profile</a>
+      <a href="OverOns.html">Over ons</a>
+      <a href="ContactPagina.html">Contact</a>
+      </div>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+      <img id="logo" src="https://raw.githubusercontent.com/Dorien2005/projectzero/master/logo%20StandaardGans%20transparent.png">
+      <br>
+      <br>
+      <br>
+      <h1 id="headerTitle">
+        Over Ons
+      </h1>
+      <p id="headerTekst">
+        Hier bij standaardgans is onze eerste prioriteit dat onze gebruikers blij en gezond zijn. Als u nog meer te weten wilt komen over onze website en ons project, dan kan u hier terecht. Bij eventuele problemen of vragen over de website, kan u die hier vragen en beantwoorden wij zo snel mogelijk uw vraag.
+      </p>
+    </header>
+    <div id="doelTitel">
+      ONZE DOELEN
+    </div>
+    <ul id="doelList">
+      <li class="doelItem">Een wereld met gezondere mensen</li>
+      <li class="doelItem">Een wereld met blijere mensen</li>
+      <li class="doelItem">Om jouw sportervaring fantastisch te maken</li>
+    </ul>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
