@@ -17,6 +17,9 @@ const positions = [];
 let startTimer;
 let startTracking;
 
+let distance;
+let time;
+
 
 start_button.addEventListener("click", start);
 
@@ -30,7 +33,7 @@ function  start() {
   setupInterface();
 
   //start tracking location
-  let distance = 0;
+  distance = 0;
   startTracking = navigator.geolocation.watchPosition(function(position)  {
     positions.push(position);
 
@@ -43,7 +46,7 @@ function  start() {
   });
 
   //start timer
-  let time = 0;
+  time = 0;
   startTimer = setInterval(function() {
     //update time by 1 each second
     time += 1;
@@ -59,6 +62,32 @@ function  pause() {
   pause_button.removeEventListener("click", pause);
 
   pause_button.innerHTML = "Ga door";
+  pause_button.addEventListener("click", resume);
+}
+
+function resume() {
+  startTracking = navigator.geolocation.watchPosition(function(position)  {
+    positions.push(position);
+
+    let position1 = positions[positions.length - 2];
+    let position2 = positions[positions.length - 1];
+    console.log(positions, position1, position2);
+    distance += getDistance(position1.coords.latitude, position2.coords.latitude, position1.coords.longitude, position2.coords.longitude);
+
+    updateDistance(distance);
+
+    pause_button.removeEventListener("click", resume);
+
+    pause_button.innerHTML = "Pauzeer";
+    pause_button.addEventListener("click", pause);
+  });
+
+  startTimer = setInterval(function() {
+    //update time by 1 each second
+    time += 1;
+
+    updateTimer(time);
+  }, 1000);
 }
 
 
