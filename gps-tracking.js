@@ -129,7 +129,7 @@ function setupInterface() {
   pause_button.style.left = "0px";
 
   stop_button.style.display = "block";
-  stop_button.style.left = "250px";
+  stop_button.style.left = "320px";
 
   open_close.style.right = "50px";
 
@@ -210,4 +210,9 @@ function updateTimer(time) {
   }
 
   time_text.innerHTML = hours + ":" + minutes + ":" + seconds;
+}
+
+
+function saveData() {
+
 }
