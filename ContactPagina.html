@@ -6,198 +6,268 @@
     <title>Contact Pagina</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <style>
-body {
-  margin: 0;
-  font-family: 'Source Sans Pro', sans-serif;
-}
+      body {
+        margin: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+      }
 
-header {
-  background-color: #ACE9B9;
-  color: #DDFFF7;
-}
+      header {
+        background-color: #ACE9B9;
+        color: #DDFFF7;
+      }
 
-#logo {
-  height: 80px;
-  display: float;
-  float: right;
-  margin: 20px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
+      #logo {
+        height: 80px;
+        display: float;
+        float: right;
+        margin: 20px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+      }
 
-h1{
-  padding: 7%;
-  padding-bottom: 11%;
-  font-size: 40px;
-  margin: 0px;
-  text-align: center;
-}
+      h1{
+        padding: 7%;
+        padding-bottom: 11%;
+        font-size: 40px;
+        margin: 0px;
+        text-align: center;
+      }
 
-#container1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-	grid-template-areas: "div1 div1 div1 div2 div2"
-                       "div1 div1 div1 div3 div3";
-	grid-gap: 0px;
-}
+      #container1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      	grid-template-areas: "div1 div1 div1 div2 div2"
+                             "div1 div1 div1 div3 div3";
+      	grid-gap: 0px;
+      }
 
-#div1 {
-  grid-area: div1;
-  background-color: #9292926b;
-  padding: 10px;
-  height: 300px;
-}
+      #div1 {
+        grid-area: div1;
+        background-color: #9292926b;
+        padding: 10px;
+        height: 300px;
+      }
 
-#div2 {
-  grid-area: div2;
-  background-color: #dbdbdb;
-  padding: 10px;
-}
+      #div2 {
+        grid-area: div2;
+        background-color: #dbdbdb;
+        padding: 10px;
+      }
 
-#div3 {
-  grid-area: div3;
-  background-color: #cccccc;
-  padding: 10px;
-}
-
-
-#container2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "badge1 badge1 badge1 badge1"
-                       "badge2 badge3 badge4 badge5"
-                       "badge2 badge3 badge4 badge5";
+      #div3 {
+        grid-area: div3;
+        background-color: #cccccc;
+        padding: 10px;
+      }
 
 
-  grid-gap: 0px;
-  background-color: #BCF9C9;
-}
-
-#teamTitel {
-  margin: 20px;
-}
-
-#badge1 {
-  grid-area: badge1;
-  background-color: #8FB8ED;
-  padding: 10px;
-  margin-top: 0px;
-  font-size: 40px;
-  text-align: center;
-}
-
-#badge2 {
-  grid-area: badge2;
-  background-color: #da6f6f;
-  padding: 10px;
-}
-
-#badge3 {
-  grid-area: badge3;
-  background-color: #F5DC5F;
-  padding: 10px;
-}
-
-#badge4 {
-  grid-area: badge4;
-  background-color: #BCF9C9;
-  padding: 10px;
-}
-
-#badge5 {
-  grid-area: badge5;
-  background-color: #DDFFF7;
-  padding: 10px;
-}
-
-#mailbutton {
-  font: 18px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-#kopje1 {
-  font-size: 40px;
-}
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #8FB8ED;
-  color: black;
-  text-align: center;
-}
-@media only screen and (max-width: 600px) {
-  #container2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "badge1 badge1"
-                       "badge2 badge3"
-                       "badge2 badge3"
-                       "badge4 badge5"
-                       "badge4 badge5";
-
-  grid-gap: 0px;
-  background-color: #fbeaeba9;
-  }
-
-  #badge1, #kopje1 {
-  font-size: 60px;
-
-  }
-}
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+      #container2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "badge1 badge1 badge1 badge1"
+                             "badge2 badge3 badge4 badge5"
+                             "badge2 badge3 badge4 badge5";
 
 
-  }
-}
+        grid-gap: 0px;
+        background-color: #BCF9C9;
+      }
+
+      #teamTitel {
+        margin: 20px;
+      }
+
+      #badge1 {
+        grid-area: badge1;
+        background-color: #8FB8ED;
+        padding: 10px;
+        margin-top: 0px;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      #badge2 {
+        grid-area: badge2;
+        background-color: #da6f6f;
+        padding: 10px;
+      }
+
+      #badge3 {
+        grid-area: badge3;
+        background-color: #F5DC5F;
+        padding: 10px;
+      }
+
+      #badge4 {
+        grid-area: badge4;
+        background-color: #BCF9C9;
+        padding: 10px;
+      }
+
+      #badge5 {
+        grid-area: badge5;
+        background-color: #DDFFF7;
+        padding: 10px;
+      }
+
+      #mailbutton {
+        font: 18px Arial;
+        text-decoration: none;
+        background-color: #EEEEEE;
+        color: #333333;
+        padding: 2px 6px 2px 6px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      #kopje1 {
+        font-size: 40px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        #container2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "badge1 badge1"
+                             "badge2 badge3"
+                             "badge2 badge3"
+                             "badge4 badge5"
+                             "badge4 badge5";
+
+        grid-gap: 0px;
+        background-color: #fbeaeba9;
+        }
+
+        #badge1, #kopje1 {
+        font-size: 60px;
+
+        }
+      }
+
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+
+
+        }
+
+      /*buttons styling*/
+      #button-container {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 60px;
+
+        padding: 0;
+        margin: 0;
+
+        background-color: #8FB8ED;
+
+        transition: 0.4s;
+      }
+
+      #button-container button  {
+        position: absolute;
+
+        height: 60px;
+        width: 300px;
+
+        font-size: 25px;
+        align-content: center;
+
+        border: none;
+        background: #9FC8FD;
+
+        margin-left: 20px;
+      }
+
+      #button-container button:hover  {
+        background: #accffc;
+      }
+
+      #start {
+        left: 0px;
+      }
+
+      #pause {
+        transition: .7s;
+        left: -650px;
+      }
+
+      #stop {
+        transition: .7s;
+        left: -400px;
+      }
+
+      #interface  {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 0;
+
+        overflow-y: hidden;
+        background: #9FC8FD;
+
+        transition: 0.4s;
+      }
+
+      #open-close {
+        position: absolute;
+        right: -50px;
+        top: 5px;
+
+        font-size: 40px;
+        color: #9FC8FD;
+
+        transition: .4s;
+      }
+
+      #open-close:hover {
+        color: #accffc;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -267,9 +337,37 @@ footer {
         </div>
       </div>
     </article>
-    <footer>
-      <p>gemaakt door: David, Leo, Leah en Dorien</p>
-    </footer>
+
+    <div id="button-container">
+      <button id="start">
+        Start
+      </button>
+      <button id="pause">
+        Pauzeer
+      </button>
+      <button id="stop">
+        Stop
+      </button>
+
+      <span id="open-close">
+        &#x25BC;
+      </span>
+    </div>
+    <div id="interface">
+      <div id="timer-container">
+        <p id="timer">
+          00:00:00
+        </p>
+      </div>
+      <div id="performance-container">
+        <p id="distance">
+          0 m afgelegd
+        </p>
+        <p id="points">
+          0 punten verdiend
+        </p>
+      </div>
+    </div>
     <script>
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
@@ -279,5 +377,6 @@ footer {
       document.getElementById("mySidenav").style.width = "0";
     }
     </script>
+    <script src="gps-tracking.js" charset="utf-8"></script>
   </body>
 </html>
